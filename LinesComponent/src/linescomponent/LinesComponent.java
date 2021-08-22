@@ -54,7 +54,9 @@ public class LinesComponent extends JComponent {
         super.paintComponent(g);
         for (Line line : lines) {
             g.setColor(line.color);
-            g.drawLine(line.x1, line.y1, line.x2, line.y2);
+            g.drawLine(line.x1, line.y1, line.x1 + (line.x2/2), line.y1 + line.y2);     
+            g.drawLine(line.x1 + (line.x2/2), line.y1 + line.y2, line.x1 - (line.x2/2), line.y1 + line.y2);
+            g.drawLine(line.x1, line.y1, line.x1 - (line.x2/2), line.y1 + line.y2);
         }
     }
 
